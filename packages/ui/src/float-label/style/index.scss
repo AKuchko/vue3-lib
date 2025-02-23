@@ -1,0 +1,48 @@
+
+.ak-float-label {
+  position: relative;
+  display: block;
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: .75rem;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    line-height: 1;
+    inset-inline-start: .75rem;
+    transition: var(--ak-transition);
+  }
+}
+
+.ak-float-label:has(input[aria-invalid="true"]),
+.ak-float-label:has(input.ak-input--invalid) {
+  .ak-float-label__label {
+    color: var(--ak-color-error);
+  }
+}
+
+.ak-float-label:not(:has(input:disabled)),
+.ak-float-label:not(:has(input[aria-disabled="true"])) {
+  &:has(input:focus),
+  &:has(input:focus-visible),
+  &:has(input:active),
+  &:has(input[placeholder]):not(:has(input:placeholder-shown)),
+  &:has(input.ak-input--filled) {
+    .ak-float-label__label {
+      top: 0;
+      padding: 0 0.125rem;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 400;
+      background: var(--ak-color-background);
+    }
+  }
+
+  &:has(input:focus),
+  &:has(input:focus-visible) {
+    .ak-float-label__label {
+      color: var(--ak-color-main);
+    }
+  }
+}
