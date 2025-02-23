@@ -1,0 +1,36 @@
+:root {
+  --ak-input-padding: 10px 0.75rem;
+  --ak-input-border-radius: 25px;
+  --ak-input-border-width: 2px;
+  --ak-input-filled-background: #edf9ff;
+}
+
+.ak-input {
+  border-radius: var(--ak-input-border-radius);
+  border: var(--ak-input-border-width) solid var(--ak-color-grey);
+  padding: var(--ak-input-padding);
+  outline: none;
+
+  transition: var(--ak-transition);
+
+  &:focus,
+  &:focus-visible {
+    border-color: var(--ak-color-main);
+  }
+
+  &--filled {
+    background: var(--ak-input-filled-background);
+  }
+
+  &--disabled {
+    background: var(--ak-color-grey-light);
+  }
+
+  &--read-only {
+    pointer-events: none;
+  }
+
+  &--invalid {
+    border-color: var(--ak-color-error);
+  }
+}
