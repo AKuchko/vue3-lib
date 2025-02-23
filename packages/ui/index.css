@@ -1,0 +1,12 @@
+:root {
+  --ak-color-background: #fff;
+  --ak-color-main: #007eef;
+  --ak-color-grey: #dbdbdb;
+  --ak-color-grey-light: #f5f5f5;
+  --ak-color-error: #e31e24;
+
+  --ak-transition-duration: .25s;
+  --ak-transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ak-transition: all var(--ak-transition-duration) var(--ak-transition-timing-function);
+}
+
