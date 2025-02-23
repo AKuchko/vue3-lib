@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -43,6 +44,24 @@ export default defineConfig({
       name: 'ak',
       fileName: 'ak',
       formats: ['es', 'cjs', 'umd'],
+    },
+  },
+
+  resolve: {
+    alias: {
+      '~': path.resolve(__dirname),
+    },
+    extensions: ['css', 'scss', 'ts', 'vue'],
+  },
+
+  css: {
+    preprocessorOptions: {
+      css: {
+        additionalData: '@import "~/index.css";',
+      },
+      scss: {
+        additionalData: '@import "~/index.scss";',
+      },
     },
   },
 });
